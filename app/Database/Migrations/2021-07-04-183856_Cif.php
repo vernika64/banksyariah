@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Ciftest extends Migration
+class Cif extends Migration
 {
 	public function up()
 	{

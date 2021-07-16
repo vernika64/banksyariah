@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
@@ -18,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('addons/cpanel/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css'); ?>">
     <!-- Custom CSS -->
     <link href="<?= base_url('addons/cpanel/css/style.min.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('addons/cpanel/css/tambahan.css'); ?>" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +42,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.html">
+                    <a class="navbar-brand" href="dashboard">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -77,20 +76,23 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
+                        <!-- <li class=" in">
                             <form role="search" class="app-search d-none d-md-block me-3">
                                 <input type="text" placeholder="Search..." class="form-control mt-0">
                                 <a href="" class="active">
                                     <i class="fa fa-search"></i>
                                 </a>
                             </form>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
-                            <a class="profile-pic" href="#">
+                            <a class="profile-pic" data-bs-toggle="collapse" data-bs-target="#profil" style="cursor:pointer;">
                                 <img src=<?= base_url('addons/cpanel/plugins/images/users/varun.jpg'); ?> alt="user-img" width="36" class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                            <ul class="list-group collapse" id="profil" style="position:absolute;width:100%;">
+                                <li class="list-group-item list-group-item-action list-group-hv"><a href="#" class="logout-link">Logout</a></li>
+                            </ul>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -113,51 +115,79 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard" aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="cif" aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">CIF</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Basic Table</span>
+                                <span class="hide-menu">Modul Teller</span>
                             </a>
                         </li>
+                        <!-- Modul Customer Service -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html" aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Icon</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdcs">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Google Map</span>
+                                <span class="hide-menu">Modul Customer Service</span>
                             </a>
+                            <ul class="collapse" id="mdcs">
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="hide-menu">CIF</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="hide-menu">Iron</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="hide-menu">Copper</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
+
+                        <!-- Modul Supervisor -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html" aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Blank Page</span>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span class="hide-menu">Modul Supervisor</span>
                             </a>
+                            <ul class="collapse" id="mdspv">
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="hide-menu">Nuggets</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="hide-menu">Iron</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false" role="button" data-bs-toggle="collapse" data-bs-target="#mdspv">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <span class="hide-menu">Copper</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html" aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="hide-menu">Error 404</span>
-                            </a>
-                        </li>
-                        <li class="text-center p-20 upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/ampleadmin/" class="btn d-grid btn-danger text-white" target="_blank">
-                                Upgrade to Pro</a>
-                        </li>
+
                     </ul>
 
                 </nav>
@@ -178,12 +208,12 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title"><?= $judul; ?></h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="#" class="fw-normal">Dashboard</a></li>
+                                <li><a href="#" class="fw-normal"><?= $judul; ?></a></li>
                             </ol>
                         </div>
                     </div>
@@ -236,9 +266,9 @@
     <script src="<?= base_url('addons/cpanel/js/custom.js'); ?>"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="<?= base_url('addons/cpanel/plugins/bower_components/chartist/dist/chartist.min.js'); ?>"></script>
+    <!-- <script src="<?= base_url('addons/cpanel/plugins/bower_components/chartist/dist/chartist.min.js'); ?>"></script>
     <script src="<?= base_url('addons/cpanel/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js'); ?>"></script>
-    <script src="<?= base_url('addons/cpanel/js/pages/dashboards/dashboard1.js'); ?>"></script>
+    <script src="<?= base_url('addons/cpanel/js/pages/dashboards/dashboard1.js'); ?>"></script> -->
 </body>
 
 </html>

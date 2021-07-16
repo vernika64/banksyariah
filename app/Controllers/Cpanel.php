@@ -12,9 +12,21 @@ class Cpanel extends BaseController
 	{
 		return view('index');
 	}
-	public function home()
+	public function dashboard()
 	{
-		return view('dashboard');
+		$data = [
+			'judul'	=> 'Dashboard',
+			'welcomemessage'	=> 'Selamat Datang'
+		];
+
+		return view('dashboard', $data);
+	}
+	public function cif()
+	{
+		$data = [
+			'judul'		=> 'Customer Identification file'
+		];
+		return view('cif', $data);
 	}
 
 
